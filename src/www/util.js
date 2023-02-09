@@ -2,6 +2,9 @@ var exec = require('cordova/exec');
 
 var WebView = {
   convertFileSrc: function(url) {
+    if(window.WEBVIEW_SERVER_URL === undefined) {
+      window.WEBVIEW_SERVER_URL = "http://localhost";
+    }
     if (!url) {
       return url;
     }
